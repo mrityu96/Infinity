@@ -1,0 +1,44 @@
+{
+  "manifest_version": 3,
+  "name": "Salesforce CML Tool",
+  "version": "1.1.0",
+  "description": "Fetch and inspect Revenue Cloud CML using Salesforce orgs already open in Chrome. No Python or CLI.",
+  "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA992mwP1l15TXHVJgRxkdok/PmW3ZwWZM+ExtWSdh7Q/AVnOfAQsiXJK/xarBvakTvwzGw6B/TQXuLPBDVUTiaoM35vBW9BrB35gUBNu67tnLvnv3iTuo0E/fjdtONfwbtgbNyGqKszNSL/bbs3nLCnm2qUXAaWqjWA57L3i5XNMHQ+JGhhhJM0Ca4RNOYN+3FP2zYWWksuEIJ2unAK6OQuEKNY2tTLEMuHV0VJikUhCdU5y5V0xeoY5bs4YnQpT4AhHmOLHGEgWUOZpWJW6KKNqBOGWh2NQqZSAPjkBOV51CGLl8GYf9s+QszpqFZTkxVV5kl+o+X9KLx6NkCuqytQIDAQAB",
+  "action": {
+    "default_title": "Open CML Tool",
+    "default_icon": {
+      "96": "icons/icon-96.png",
+      "128": "icons/icon-192.png"
+    }
+  },
+  "icons": {
+    "96": "icons/icon-96.png",
+    "128": "icons/icon-192.png"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "options_ui": {
+    "page": "options.html",
+    "open_in_tab": false
+  },
+  "permissions": [
+    "storage",
+    "alarms",
+    "cookies",
+    "tabs"
+  ],
+  "host_permissions": [
+    "https://*.salesforce.com/*",
+    "https://*.force.com/*",
+    "https://*.cloudforce.com/*",
+    "https://*.salesforce-setup.com/*",
+    "https://*.salesforce.mil/*",
+    "https://*.cloudforce.mil/*",
+    "https://*.sfcrmapps.cn/*",
+    "https://*.sfcrmproducts.cn/*"
+  ],
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'none'; connect-src 'self' https://*.salesforce.com https://*.force.com https://*.cloudforce.com https://*.salesforce-setup.com https://*.salesforce.mil https://*.cloudforce.mil https://*.sfcrmapps.cn https://*.sfcrmproducts.cn"
+  }
+}
